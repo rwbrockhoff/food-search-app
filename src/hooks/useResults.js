@@ -3,6 +3,7 @@ import yelp from "../api/yelp";
 
 export default () => {
   const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [error, setErrorMessage] = useState("");
 
   useEffect(() => {
@@ -19,10 +20,11 @@ export default () => {
         }
       });
       setResults(response.data.businesses);
+      setLoading(false);
     } catch (err) {
       setErrorMessage("Oops! Something went wrong.");
     }
   };
 
-  return [searchApi, results, error];
+  return [searchApi, results, loading, error];
 };
