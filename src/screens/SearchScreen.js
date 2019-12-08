@@ -60,7 +60,8 @@ const styles = StyleSheet.create({
     marginRight: 20,
     flexDirection: "row",
     alignItems: "center",
-    opacity: 0.8
+    opacity: 0.8,
+    paddingBottom: 10
   },
   locationText: {
     color: "#0facf3"

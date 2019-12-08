@@ -11,6 +11,8 @@ export default () => {
   }, []);
 
   const searchApi = async term => {
+    !loading && setLoading(true); // <== Loading UI between searches
+
     try {
       const response = await yelp.get("/search", {
         params: {

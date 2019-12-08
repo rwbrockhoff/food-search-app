@@ -4,7 +4,7 @@ import { Text, View, StyleSheet, Image } from "react-native";
 const ResultItem = ({ item }) => {
   return (
     <View style={styles.listContainer}>
-      <Image source={{ uri: item.image_url }} style={styles.image} />
+      <Image source={{ uri: item.image_url || null }} style={styles.image} />
       <Text style={styles.itemName}>{item.name}</Text>
       <Text style={styles.itemDescription}>
         {item.rating} Stars | {item.review_count} Reviews
