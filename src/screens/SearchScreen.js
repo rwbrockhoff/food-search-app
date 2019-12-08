@@ -21,7 +21,10 @@ const SearchScreen = () => {
       />
 
       {error ? <Text style={styles.errorMessage}>{error}</Text> : null}
-      <ScrollView>
+      <ScrollView
+        contentContainerStyle={{ paddingBottom: 20 }}
+        showsVerticalScrollIndicator={false}
+      >
         <ResultList title="Cheap" list={filterResultsByPrice("$")} />
         <ResultList title="Affordable" list={filterResultsByPrice("$$")} />
         <ResultList title="Expensive" list={filterResultsByPrice("$$$")} />
@@ -31,7 +34,9 @@ const SearchScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
+  container: {
+    flex: 1
+  },
   errorMessage: {
     textAlign: "center",
     color: "red",
